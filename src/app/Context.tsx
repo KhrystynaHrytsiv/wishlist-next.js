@@ -9,18 +9,21 @@ interface IContext {
     trigger: boolean,
     setTrigger: Dispatch<SetStateAction<boolean>>;
     wishForUpdate: IWish | null,
-    setWishForUpdate: Dispatch<SetStateAction<IWish | null>>
+    setWishForUpdate: Dispatch<SetStateAction<IWish | null>>,
+    isOpen:boolean,
+    setIsOpen:Dispatch<SetStateAction<boolean>>;
 
 }
 const Context = createContext<IContext | null>(null);
 
 export default function ContextProvider ({children}:{children: React.ReactNode }){
-        const [wishes, setWishes] = useState<IWish[]>([]);
-        const [trigger, setTrigger] = useState(false);
-        const [wishForUpdate, setWishForUpdate] = useState<IWish | null>(null);
+    const [wishes, setWishes] = useState<IWish[]>([]);
+    const [trigger, setTrigger] = useState(false);
+    const [wishForUpdate, setWishForUpdate] = useState<IWish | null>(null);
+    const [isOpen, setIsOpen] = useState(false)
 
         return (
-        <Context.Provider value={{wishes, setWishes, trigger, setTrigger, wishForUpdate, setWishForUpdate}}>
+        <Context.Provider value={{wishes, setWishes, trigger, setTrigger, wishForUpdate, setWishForUpdate, isOpen, setIsOpen}}>
             {children}
         </Context.Provider>
 );

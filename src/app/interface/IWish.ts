@@ -5,5 +5,5 @@ export interface IWish {
     image:string,
     price:number,
     link:string,
-    date: string
+    createdAt: string
 }

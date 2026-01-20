@@ -6,9 +6,11 @@ import WishDetails from "@/app/(main-layout)/wishes/[id]/WishDetails";
 interface IProp {
    params: {id:string}
 }
-const Page:FC<IProp> = async ({params: {id}}) => {
-    console.log('ID:', id);
+const Page:FC<IProp> = async ({params}) => {
+    const resolveParams = await params;
+    const {id} = resolveParams;
     const {data} = await wishService.getById(id);
+    console.log(data);
     return (
         <div>
             <WishDetails wish={data}/>

@@ -1,14 +1,6 @@
 {
   "wishes": [
     {
-      "id": "1",
-      "title": "book",
-      "description": "Agata Kristi ",
-      "price": 15,
-      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/c/o/cover_18_77.jpg",
-      "createdAt": "2026-01-09T15:38:24.713Z"
-    },
-    {
       "id": "2",
       "title": "PC",
       "description": "RTX 5090 razen 7 7800x3d",
@@ -25,20 +17,12 @@
       "createdAt": "2026-01-09T19:13:57.417Z"
     },
     {
-      "id": "4",
       "title": "Forth wings",
       "description": "Rebecca Yarros",
       "price": 30,
       "image": "https://content1.rozetka.com.ua/goods/images/big/424442472.jpg",
-      "createdAt": "2026-01-09T19:15:52.287Z"
-    },
-    {
-      "id": "6f57",
-      "title": "",
-      "description": "",
-      "price": "",
-      "image": "",
-      "link": ""
+      "link": "https://book-ye.com.ua/literatura-inozemnimi-movami/khudozhnya-literatura-inozemnymy-movamy/suchasna-literatura/fourth-wing-book-1-the-empyrean-big/?srsltid=AfmBOoq23CxV8gMfBZyH12qYlzhPR4Qr8UgtxyRv8cwCN85JCHBuwWcR",
+      "id": "4"
     },
     {
       "id": "0cdb",

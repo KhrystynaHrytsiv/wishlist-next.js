@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+ // async redirects(){
+ //   return [{
+ //     source:'/',
+ //     destination: '/wishes',
+ //     permanent:true,
+ //   }]
+ // }
+     reactCompiler: true,
 };
 
 export default nextConfig;
