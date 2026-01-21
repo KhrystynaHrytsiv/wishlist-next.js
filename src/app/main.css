@@ -3,5 +3,12 @@
 /*@tailwind utilities;*/
 @import "tailwindcss";
 body{
-    background-color: rgba(221, 160, 221, 0.42);
+   background-color: rgba(0, 0, 0, 0.3);
 }
+/*input{*/
+/*   width: 70%;*/
+/*   border: 1px darkgray;*/
+/*   border-radius: 40px;*/
+/*   padding: 8px 12px;*/
+/*   margin: 0 auto;*/
+/*}*/

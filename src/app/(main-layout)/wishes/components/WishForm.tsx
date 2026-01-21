@@ -4,11 +4,14 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {IWish} from "@/app/interface/IWish";
 import {useAppContext} from "@/app/Context";
 import wishService from "@/app/service/wishService";
+import {IoMdCloseCircleOutline} from "react-icons/io";
+import {yupResolver} from "@hookform/resolvers/yup";
+import WishValidator from "@/app/validator/validator";
+import {IWishForm} from "@/app/interface/IWishForm";
 
 const WishForm = () => {
-// const {register, handleSubmit, setValue, reset, formState:{isValid, errors} } = useForm<IWishForm>({mode: 'all', resolver: yupResolver(WishValidator)});
-const {register, handleSubmit, setValue, reset, formState:{isValid, errors} } = useForm<IWish>({mode: 'all'});
-const {wishForUpdate, setWishForUpdate, setTrigger} = useAppContext();
+const {register, handleSubmit, setValue, reset, formState:{isValid, errors} } = useForm<IWishForm>({mode:'all', resolver: yupResolver(WishValidator)});
+const {wishForUpdate, setWishForUpdate, setTrigger, setIsOpen} = useAppContext();
 
     useEffect(() => {
         if(wishForUpdate){
@@ -20,29 +23,43 @@ const {wishForUpdate, setWishForUpdate, setTrigger} = useAppContext();
         }
     }, [wishForUpdate, setValue]);
 
-    const save:SubmitHandler<IWish> = async (wish:IWish) =>{
-        await wishService.create(wish);
+    const save:SubmitHandler<IWishForm> = async (wish:IWishForm) =>{
+        const response = await wishService.getAll();  // AxiosResponse<IWish[]>
+        const wishes = response.data;
+        const newId = wishes.length > 0
+            ? wishes[wishes.length - 1].id + 1 : 1;
+        const newWish: IWish = {
+            ...wish,
+            id: newId,
+            createdAt: new Date().toISOString(),
+        };
+        await wishService.create(newWish);
         setTrigger(prev =>!prev);
         reset();
     }
 
-    const update:SubmitHandler<IWish> = async (wish:IWish) =>{
+    const update:SubmitHandler<IWishForm> = async (wish:IWishForm) =>{
         if(wishForUpdate){
-        await wishService.update(wishForUpdate.id, wish);
+            const updateWish ={
+                ...wishForUpdate,
+                ...wish
+            }
+        await wishService.update(wishForUpdate.id, updateWish);
         setTrigger(prev => !prev);
         setWishForUpdate(null);
         reset();
         }
     }
     return (
-        <form onSubmit={handleSubmit(wishForUpdate ? update: save)} className=' w-1/2 max-w-md mx-auto p-6 bg-white rounded-lg shadow-md gap-4'>
-            <input type={"text"} placeholder={'Title'} {...register('title')} className='border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
-            <input type={"text"} placeholder={'Description'} {...register('description')} className='border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
-            <input type={"number"} placeholder={'Price'} {...register('price')} className='border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
-            <input type={"url"} placeholder={'Image'} {...register('image')} className='border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
-            <input type={"url"} placeholder={'Link'} {...register('link')} className='border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
-            <button disabled={!isValid} className={`mt-4 px-4 py-2 rounded-md text-white font-semibold transition ${isValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'}`}>{wishForUpdate ? 'Update':'Save'}</button>
+        <form onSubmit={handleSubmit(wishForUpdate ? update: save)} className='flex flex-col m-auto p-6 bg-white rounded-lg shadow-md gap-2'>
+            <IoMdCloseCircleOutline className= 'absolute top-3 right-3 w-10 h-10 cursor-pointer text-gray-600 hover:text-red-500' onClick ={()=>setIsOpen(prev => !prev)} />
+            <input type={"text"} placeholder={'Title'} {...register('title')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
             {errors.title && <div>{errors.title.message}</div>}
+            <input type={"text"} placeholder={'Description'} {...register('description')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
+            <input type={"number"} placeholder={'Price'} {...register('price')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
+            <input type={"url"} placeholder={'Image'} {...register('image')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
+            <input type={"url"} placeholder={'Link'} {...register('link')} className='w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
+            <button disabled={!isValid} className={`w-50 m-auto mt-4 px-4 py-2 rounded-md text-white font-semibold transition ${isValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'}`}>{wishForUpdate ? 'Update':'Save'}</button>
             {errors.description && <div>{errors.description.message}</div>}
             {errors.price && <div>{errors.price.message}</div>}
             {errors.image && <div>{errors.image.message}</div>}
