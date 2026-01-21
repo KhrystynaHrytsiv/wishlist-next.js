@@ -18,6 +18,7 @@ const WishDetails = ({wish}:{wish:IWish}) => {
         await wishService.delete(id);
         setTrigger((prev:boolean) =>!prev);
         setIsDeleteOpen(true);
+        navigate.push('/wishes')
     }
     const update = ()=> {
         setWishForUpdate(wish);

@@ -56,14 +56,14 @@ const {wishForUpdate, setWishForUpdate, setTrigger, setIsOpen} = useAppContext()
             <input type={"text"} placeholder={'Title'} {...register('title')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
             {errors.title && <div>{errors.title.message}</div>}
             <input type={"text"} placeholder={'Description'} {...register('description')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
-            <input type={"number"} placeholder={'Price'} {...register('price')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
-            <input type={"url"} placeholder={'Image'} {...register('image')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
-            <input type={"url"} placeholder={'Link'} {...register('link')} className='w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
-            <button disabled={!isValid} className={`w-50 m-auto mt-4 px-4 py-2 rounded-md text-white font-semibold transition ${isValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'}`}>{wishForUpdate ? 'Update':'Save'}</button>
             {errors.description && <div>{errors.description.message}</div>}
+            <input type={"number"} placeholder={'Price'} {...register('price')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
             {errors.price && <div>{errors.price.message}</div>}
+            <input type={"url"} placeholder={'Image'} {...register('image')} className=' w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
             {errors.image && <div>{errors.image.message}</div>}
+            <input type={"url"} placeholder={'Link'} {...register('link')} className='w-70 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 m-auto'/>
             {errors.link && <div>{errors.link.message}</div>}
+            <button disabled={!isValid} className={`w-50 m-auto mt-4 px-4 py-2 rounded-md text-white font-semibold transition ${isValid ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'}`}>{wishForUpdate ? 'Update':'Save'}</button>
         </form>
     );
 };
