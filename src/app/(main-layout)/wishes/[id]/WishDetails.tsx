@@ -25,7 +25,7 @@ const WishDetails = ({wish}:{wish:IWish}) => {
         <div onClick={()=>navigate.back()} className='text-3xl h-10 w-10 bg-gray-400 rounded-3xl content-center m-2 justify-center cursor-pointer' ><AiOutlineArrowLeft/></div>
         <div className='w-1/2 border-1 flex justify-center m-auto gap-6'>
             <div>
-                 <img src={image} alt={title}/>
+                 <img src={image} alt={title} className='h-100 '/>
                  <h1>Title: {title}</h1>
                  <p>Description: {description}</p>
                  <h3>Price: {price}$</h3>
