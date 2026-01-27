@@ -33,7 +33,7 @@ const Wishes = () => {
     };
 
 
-    const goToDetails =(id: number)=>{
+    const goToDetails =(id: string)=>{
         navigation.push(`/wishes/${id}`)
     }
 

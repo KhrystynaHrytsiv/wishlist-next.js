@@ -1,5 +1,5 @@
 export interface IWish {
-    id: number | string,
+    id: string,
     title: string,
     description: string,
     image:string,

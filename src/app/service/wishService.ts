@@ -8,15 +8,15 @@ const apiService = axios.create({baseURL:baseUrl});
 
 export const wishes ={
     base: 'wishes',
-    byId:(id:number | string) => `wishes/${id}`
+    byId:(id:string) => `wishes/${id}`
 }
 
 const wishService ={
     getAll: ():IRes<IWish[]> => apiService.get(wishes.base),
-    getById: (id:number | string):IRes<IWish> => apiService.get(wishes.byId(id)),
+    getById: (id:string):IRes<IWish> => apiService.get(wishes.byId(id)),
     create: (wish:IWish)=> apiService.post(wishes.base, wish),
-    update: (id:number | string, wish:IWish):IRes<IWish> => apiService.put(wishes.byId(id), wish),
-    delete: (id: number) => apiService.delete(wishes.byId(id))
+    update: (id:string, wish:IWish):IRes<IWish> => apiService.put(wishes.byId(id), wish),
+    delete: (id: string) => apiService.delete(wishes.byId(id))
 }
 
 export default wishService

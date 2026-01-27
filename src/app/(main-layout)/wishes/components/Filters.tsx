@@ -5,8 +5,8 @@
     const {sortByDate, sortByPrice, setSortByPrice, setSortByDate} = useAppContext();
 
         return (
-            <div className='bg-black/30 flex gap-4 justify-around p-2 rounded  flex-col md:flex-row gap-2 md:items-center md:h-auto'>
-                <div className='rounded bg-white gap-4 flex justify-center items-center md:text-lg'>
+            <div className='bg-black/30 flex gap-4 justify-around p-3 rounded  flex-col md:flex-row gap-2 md:items-center md:h-auto'>
+                <div className='rounded bg-white gap-2 p-1.5 flex justify-center items-center md:text-lg'>
                     <label> Sort by Date:</label>
                     <select value={sortByDate ?? ''} onChange={(e) =>
                             setSortByDate(e.target.value === '' ? null : (e.target.value as 'newest' | 'oldest'))}>
@@ -15,7 +15,7 @@
                         <option value="oldest">Oldest to newest</option>
                     </select>
                 </div>
-                <div className=' rounded bg-white flex justify-center items-center md:text-lg lg:text-lg'>
+                <div className=' rounded bg-white p-1.5 gap-2 flex  justify-center items-center md:text-lg lg:text-lg'>
                     <label>Sort by Price: </label>
                     <select value={sortByPrice ?? ''} onChange={(e) =>
                         setSortByPrice(e.target.value === '' ? null : (e.target.value as 'high' | 'low'))}>
