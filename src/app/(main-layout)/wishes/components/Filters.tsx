@@ -6,7 +6,7 @@
 
         return (
             <div className='bg-black/30 flex gap-4 justify-around p-2 rounded  flex-col md:flex-row gap-2 md:items-center md:h-auto'>
-                <div className='rounded bg-white gap-4 flex justify-center items-center lg:text-lg'>
+                <div className='rounded bg-white gap-4 flex justify-center items-center md:text-lg'>
                     <label> Sort by Date:</label>
                     <select value={sortByDate ?? ''} onChange={(e) =>
                             setSortByDate(e.target.value === '' ? null : (e.target.value as 'newest' | 'oldest'))}>

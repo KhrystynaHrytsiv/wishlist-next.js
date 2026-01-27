@@ -24,10 +24,9 @@ const {wishForUpdate, setWishForUpdate, setTrigger, setIsOpen} = useAppContext()
     }, [wishForUpdate, setValue]);
 
     const save:SubmitHandler<IWishForm> = async (wish:IWishForm) =>{
-        const response = await wishService.getAll();  // AxiosResponse<IWish[]>
+        const response = await wishService.getAll();
         const wishes = response.data;
-        const newId = wishes.length > 0
-            ? wishes[wishes.length - 1].id + 1 : 1;
+        const newId = wishes.length > 0 ? String(Number(wishes[wishes.length - 1].id) + 1): '1';
         const newWish: IWish = {
             ...wish,
             id: newId,

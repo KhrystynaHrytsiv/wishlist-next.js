@@ -62,7 +62,7 @@
       "createdAt": "2026-01-27T09:50:54.096Z"
     },
     {
-      "id": "811",
+      "id": "9",
       "link": "https://vidviday.ua/bukovel-tours",
       "image": "https://vidviday.ua/storage/media/place/20712/bukovel-zyma-22.jpg",
       "price": 500,
@@ -71,13 +71,31 @@
       "createdAt": "2026-01-27T09:55:54.096Z"
     },
     {
-      "id": "8111",
+      "id": "10",
       "link": "https://timesofindia.indiatimes.com/travel/destinations/magical-places-to-visit-in-switzerland-this-winter/photostory/106092021.cms",
       "image": "https://static.toiimg.com/thumb/msid-106092213,width-748,height-499,resizemode=4,imgsize-2718958/.jpg",
       "price": 1000,
       "description": "Take a lot of pictures walking across this country.",
       "title": "Switzerland",
       "createdAt": "2026-01-27T10:05:21.955Z"
+    },
+    {
+      "id": "11",
+      "link": "https://www.istockphoto.com/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%BA%D0%B0%D0%B2%D0%B0-%D0%B7-%D0%BA%D1%80%D1%83%D0%B0%D1%81%D0%B0%D0%BD%D0%B0%D0%BC%D0%B8-%D0%BF%D1%80%D0%BE%D1%82%D0%B8-%D0%B5%D0%B9%D1%84%D0%B5%D0%BB%D0%B5%D0%B2%D0%BE%D1%97-%D0%B2%D0%B5%D0%B6%D1%96-%D0%B2-%D0%BF%D0%B0%D1%80%D0%B8%D0%B6%D1%96-%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%96%D1%8F-gm478323878-67264513",
+      "image": "https://media.istockphoto.com/id/478323878/photo/coffee-with-croissants-against-eiffel-tower-in-paris-france.jpg?s=612x612&w=0&k=20&c=UjI0WWan9XcQeBSVbWL5igH6QlfXJC_C9byeSmWB3EI=",
+      "price": 250,
+      "description": "Eating croissants with coffee opposite Elfeleva tower",
+      "title": "France",
+      "createdAt": "2026-01-27T11:58:53.542Z"
+    },
+    {
+      "id": "12",
+      "link": "https://www.dubai.it/en/things-to-do-dubai/dubai-marina/",
+      "image": "https://www.dubai.it/en/wp-content/uploads/sites/142/dubai-marina-hd.jpg",
+      "price": 1800,
+      "description": "Rest ",
+      "title": "Dubai",
+      "createdAt": "2026-01-27T12:09:55.686Z"
     }
   ]
 }
