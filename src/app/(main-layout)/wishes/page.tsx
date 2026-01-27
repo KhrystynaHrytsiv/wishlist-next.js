@@ -10,9 +10,9 @@ const WishesPage =  () => {
 
     return (
         <div>
-            <div className='flex justify-between px-6 py-2'>
+            <div className='flex justify-between px-6 py-2  flex-col md:flex-row gap-2 md:items-center'>
             <Filters/>
-            <button onClick={() => setIsOpen(true)} className=" h-14 px-4 py-2 bg-blue-500 text-white rounded">
+            <button onClick={() => setIsOpen(true)} className=" w-50 px-4 py-2 bg-blue-500 text-white rounded text-sm sm:text-base md:text-lg lg:text-xl ">
                 Add New Wish
             </button>
             </div>

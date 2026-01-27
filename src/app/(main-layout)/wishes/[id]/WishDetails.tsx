@@ -27,8 +27,8 @@ const WishDetails = ({wish}:{wish:IWish}) => {
     return (
         <>
         <div onClick={()=>navigate.back()} className='flex items-center justify-center text-3xl h-10 w-10 bg-gray-400 rounded-full m-2 cursor-pointer' ><AiOutlineArrowLeft/></div>
-        <div className=' w-123 flex justify-center m-auto gap-5 rounded-2xl bg-pink-200 flex-col'>
-                 <img src={image} alt={title} className='h-110 w-123 object-cover rounded-2xl'/>
+        <div className=' w-125 flex justify-center m-auto gap-2 rounded-2xl bg-pink-200 flex-col'>
+                 <img src={image} alt={title} className='h-110 w-120 object-cover my-2 m-auto rounded-2xl'/>
             <div className= 'mx-4 text-lg '>
                  <h1 className='font-bold text-xl'>Title: {title}</h1>
                  <p>Description: {description}</p>

@@ -5,7 +5,8 @@
       "description": "RTX 5090 razen 7 7800x3d",
       "price": 5000,
       "image": "https://files.gamingpc.com.ua/image/cache/770x510/2df98ff624736de01044ceea1f20f466.webp",
-      "id": "2"
+      "id": "2",
+      "createdAt": "2026-01-09T19:13:00.417Z"
     },
     {
       "id": "3",
@@ -21,15 +22,17 @@
       "price": 30,
       "image": "https://content1.rozetka.com.ua/goods/images/big/424442472.jpg",
       "link": "https://book-ye.com.ua/literatura-inozemnimi-movami/khudozhnya-literatura-inozemnymy-movamy/suchasna-literatura/fourth-wing-book-1-the-empyrean-big/?srsltid=AfmBOoq23CxV8gMfBZyH12qYlzhPR4Qr8UgtxyRv8cwCN85JCHBuwWcR",
-      "id": "4"
+      "id": "4",
+      "createdAt": "2026-01-09T19:13:30.417Z"
     },
     {
       "title": "Snowboard",
       "description": "Try to snowboard",
-      "price": "100",
-      "image": "https://undiscoveredmountains.com/uploads/gallery/50/Skiing-jump-in-the-Alps--with-Undiscovered-Alps--1687-full.jpg",
+      "price": 100,
+      "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/11/28/16/ot-arc-1950-pete-webb-5.jpg",
       "link": "https://undiscoveredmountains.com/skiing-and-snowboarding-alps?srsltid=afmboooaewjmylupxpuxcekdo6peo09djory0bas0bne9yxknm0lgwif",
-      "id": "5"
+      "id": "5",
+      "createdAt": "2026-01-09T20:13:57.417Z"
     },
     {
       "id": "6",
@@ -37,23 +40,44 @@
       "description": "To learn surfing on Madeira",
       "price": "200",
       "image": "https://tugal.pt/wp-content/uploads/2023/02/madeira-island-aulas-de-surf-1.webp",
-      "link": "https://tugal.pt/en/cidade/madeira-island/activities-at-sea/surf-lessons-in-madeira-island/"
+      "link": "https://tugal.pt/en/cidade/madeira-island/activities-at-sea/surf-lessons-in-madeira-island/",
+      "createdAt": "2026-01-09T21:13:57.417Z"
     },
     {
       "id": "7",
       "title": "Cappadocia",
-      "description": "Want to fly on airballoon.",
+      "description": "Want to fly on air balloon.",
       "price": "150",
       "image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/aa/ac/51.jpg",
-      "link": "https://www.britannica.com/place/Cappadocia"
+      "link": "https://www.britannica.com/place/Cappadocia",
+      "createdAt": "2026-01-27T09:48:48.096Z"
     },
     {
       "title": "New York",
-      "description": "Visite on winter",
+      "description": "Visit on winter",
       "price": "2000",
       "image": "https://www.nationsonline.org/gallery/USA/Times-Square-New-York.jpg",
       "link": "https://www.britannica.com/place/New-York-City",
-      "id": "8"
+      "id": "8",
+      "createdAt": "2026-01-27T09:50:54.096Z"
+    },
+    {
+      "id": "811",
+      "link": "https://vidviday.ua/bukovel-tours",
+      "image": "https://vidviday.ua/storage/media/place/20712/bukovel-zyma-22.jpg",
+      "price": 500,
+      "description": "Skying this year",
+      "title": "Bukovel",
+      "createdAt": "2026-01-27T09:55:54.096Z"
+    },
+    {
+      "id": "8111",
+      "link": "https://timesofindia.indiatimes.com/travel/destinations/magical-places-to-visit-in-switzerland-this-winter/photostory/106092021.cms",
+      "image": "https://static.toiimg.com/thumb/msid-106092213,width-748,height-499,resizemode=4,imgsize-2718958/.jpg",
+      "price": 1000,
+      "description": "Take a lot of pictures walking across this country.",
+      "title": "Switzerland",
+      "createdAt": "2026-01-27T10:05:21.955Z"
     }
   ]
 }
