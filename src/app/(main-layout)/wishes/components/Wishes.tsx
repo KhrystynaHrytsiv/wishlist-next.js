@@ -3,12 +3,7 @@ import {useRouter, useSearchParams} from "next/navigation";
 import {useAppContext} from "@/app/Context";
 import React, {useEffect} from "react";
 import wishService from "@/app/service/wishService";
-import dynamic from "next/dynamic";
 
-export const  ClientComponent = dynamic(
-    () => import('./Wishes'),
-    {ssr:false}
-)
 const ITEMS_PER_PAGE = 8;
 const Wishes = () => {
     const {setWishes, trigger, sortedWishes} = useAppContext();

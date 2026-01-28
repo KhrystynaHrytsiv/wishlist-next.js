@@ -1,5 +1,6 @@
-    import React from 'react';
-    import {useAppContext} from "@/app/Context";
+'use client'
+import React from 'react';
+import {useAppContext} from "@/app/Context";
 
     const Filters = () => {
     const {sortByDate, sortByPrice, setSortByPrice, setSortByDate} = useAppContext();
