@@ -1,6 +1,6 @@
 'use client'
 
-import {createContext, Dispatch, SetStateAction, useContext, useMemo, useState} from "react";
+import {createContext, Dispatch, SetStateAction, useContext, useMemo, useState, ReactNode} from "react";
 import {IWish} from "@/app/interface/IWish";
 
 
