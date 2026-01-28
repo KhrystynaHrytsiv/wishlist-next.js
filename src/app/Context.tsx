@@ -23,7 +23,7 @@ interface IContext {
 const Context = createContext<IContext | null>(null);
 export type SortByData = 'newest' | 'oldest' | null
 export type SortByPrice = 'low' | 'high' | null
-export default function ContextProvider ({children}:{children: React.ReactNode }){
+export default function ContextProvider ({children}:{children: ReactNode }){
     const [wishes, setWishes] = useState<IWish[]>([]);
     const [trigger, setTrigger] = useState(false);
     const [wishForUpdate, setWishForUpdate] = useState<IWish | null>(null);

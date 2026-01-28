@@ -4,7 +4,12 @@ import Wishes from "@/app/(main-layout)/wishes/components/Wishes";
 import Modal from "@/app/(main-layout)/wishes/components/Modal";
 import {useAppContext} from "@/app/Context";
 import Filters from "@/app/(main-layout)/wishes/components/Filters";
+import dynamic from "next/dynamic";
 
+const  clientComponent = dynamic(
+    () => import('./page'),
+    {ssr:false}
+)
 const WishesPage =  () => {
     const {isOpen, setIsOpen} = useAppContext();
 
