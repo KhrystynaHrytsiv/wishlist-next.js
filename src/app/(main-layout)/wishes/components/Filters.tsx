@@ -3,7 +3,7 @@ import React from 'react';
 import {useAppContext} from "@/app/Context";
 
     const Filters = () => {
-    const {sortByDate, sortByPrice, setSortByPrice, setSortByDate} = useAppContext();
+    const {sortByDate, sortByPrice, setSortByPrice, setSortByDate, status, setStatus} = useAppContext();
 
         return (
             <div className='bg-black/30 flex gap-4 justify-around p-3 rounded  flex-col md:flex-row gap-2 md:items-center md:h-auto'>
@@ -24,6 +24,14 @@ import {useAppContext} from "@/app/Context";
                         <option value='high'> Expensive to cheaper</option>
                         <option value='low'> Cheaper to expensive</option>
                 </select>
+                </div>
+                <div className=' rounded bg-white p-1.5 gap-2 flex  justify-center items-center md:text-lg lg:text-lg'>
+                    <label>Sort by Status:</label>
+                    <select value={status?? ''} onChange={(e)=>
+                        setStatus(e.target.value === '' ? null : (e.target.value as 'free' | 'booked'))}>
+                        <option value={'free'}>Free</option>
+                        <option value={'booked'}>Booked</option>
+                    </select>
                 </div>
             </div>
         );

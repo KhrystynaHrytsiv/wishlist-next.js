@@ -2,6 +2,7 @@
 
 import {createContext, Dispatch, SetStateAction, useContext, useMemo, useState, ReactNode} from "react";
 import {IWish} from "@/app/interface/IWish";
+import {boolean} from "yup";
 
 
 interface IContext {
@@ -17,23 +18,26 @@ interface IContext {
     setSortByDate: Dispatch<SetStateAction<SortByData>>,
     sortByPrice: SortByPrice,
     setSortByPrice: Dispatch<SetStateAction<SortByPrice>>,
-    sortedWishes: IWish[]
+    sortedWishes: IWish[],
+    status:SortByStatus,
+    setStatus: Dispatch<SetStateAction<SortByStatus>>
 
 }
 const Context = createContext<IContext | null>(null);
 export type SortByData = 'newest' | 'oldest' | null
 export type SortByPrice = 'low' | 'high' | null
+export type SortByStatus = 'free' | 'booked' | null
 export default function ContextProvider ({children}:{children: ReactNode }){
     const [wishes, setWishes] = useState<IWish[]>([]);
     const [trigger, setTrigger] = useState(false);
     const [wishForUpdate, setWishForUpdate] = useState<IWish | null>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [sortByDate, setSortByDate] = useState<SortByData>(null);
-    const [sortByPrice, setSortByPrice] = useState<SortByPrice>(null)
+    const [sortByPrice, setSortByPrice] = useState<SortByPrice>(null);
+    const [status, setStatus] = useState<SortByStatus>(null);
 
     const sortedWishes = useMemo(() => {
         let result = [...wishes];
-
         if (sortByDate) {
             result.sort((a, b) =>
                 sortByDate === 'newest'
@@ -49,12 +53,19 @@ export default function ContextProvider ({children}:{children: ReactNode }){
                     : a.price - b.price
             );
         }
+        if (status) {
+            result.sort((a, b) =>
+                status === 'free'
+                    ? a.status === 'free' ? -1 : 1
+                    : a.status === 'booked' ? -1 : 1
+            );
+        }
 
         return result;
-    }, [wishes, sortByDate, sortByPrice]);
+    }, [wishes, sortByDate, sortByPrice, status]);
 
         return (
-        <Context.Provider value={{wishes, setWishes, trigger, setTrigger, wishForUpdate, setWishForUpdate, isOpen, setIsOpen, sortedWishes, sortByDate, setSortByDate, sortByPrice, setSortByPrice}}>
+        <Context.Provider value={{wishes, setWishes, trigger, setTrigger, wishForUpdate, setWishForUpdate, isOpen, setIsOpen, sortedWishes, sortByDate, setSortByDate, sortByPrice, setSortByPrice, status, setStatus}}>
             {children}
         </Context.Provider>
 );
