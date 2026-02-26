@@ -31,7 +31,7 @@ const {wishForUpdate, setWishForUpdate, setTrigger, setIsOpen} = useAppContext()
             ...wish,
             id: newId,
             createdAt: new Date().toISOString(),
-            status: 'free'
+            wishStatus: 'free'
         };
         await wishService.create(newWish);
         setTrigger(prev =>!prev);
