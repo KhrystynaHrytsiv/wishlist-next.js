@@ -41,13 +41,13 @@ const Wishes = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  p-4 gap-6'>
                 {paginatedWishes.map(wish =>
                     <div key={wish.id} onClick={() => goToDetails(wish.id)}
-                         className={`h-80 cursor-pointer rounded-lg shadow-md p-4 transition 
-                         ${wish.status === 'booked' ? 'bg-gray-300 hover:shadow-md' : 'bg-white hover:shadow-lg'}`}>
+                         className={`h-85 cursor-pointer rounded-lg shadow-md p-4 transition 
+                         ${wish.wishStatus === 'booked' ? 'bg-gray-300 hover:shadow-md' : 'bg-white hover:shadow-lg'}`}>
                         {wish.image && <img src={wish.image} alt={wish.title} className='w-100 h-50 object-cover'/>}
                         <h2 className='font-bold gap-4 my-2 text-lg'>{wish.title}</h2>
                         <p className='text-base line-clamp-1'> {wish.description}</p>
                         <p>{wish.price}$</p>
-                        <div>Status: {wish.status}</div>
+                        <div>Status: {wish.wishStatus}</div>
                     </div>)}
             </div>
             <div className="flex justify-center gap-4 pb-6">

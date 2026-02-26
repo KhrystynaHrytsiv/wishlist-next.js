@@ -9,10 +9,11 @@ import {useRouter} from "next/navigation";
 import Modal from "@/app/(main-layout)/wishes/components/Modal";
 
 const WishDetails = ({wish}:{wish:IWish}) => {
-    const {id, title, description, image, price, link } = wish;
-    const {setTrigger, setWishForUpdate, isOpen, setIsOpen} = useAppContext();
+    const {id, title, description, image, price, link, wishStatus} = wish;
+    const {setTrigger, setWishForUpdate, isOpen, setIsOpen, status} = useAppContext();
     const navigate = useRouter();
-    const [isDeleteOpen, setIsDeleteOpen] = useState(false)
+    const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+    const [currentStatus, setCurrentStatus] = useState(wishStatus);
 
     const remove = async () =>{
         await wishService.delete(id);
@@ -24,6 +25,16 @@ const WishDetails = ({wish}:{wish:IWish}) => {
         setWishForUpdate(wish);
         setIsOpen(true);
     }
+
+    const handleStatus = async ()=>{
+        const newStatus = currentStatus === 'booked' ? 'free' : 'booked';
+        try {
+            await wishService.update(id,{...wish, wishStatus: newStatus});
+            setCurrentStatus(newStatus)
+        } catch (e) {
+            console.error("failed status", e);
+        }
+    }
     return (
         <>
         <div onClick={()=>navigate.back()} className='flex items-center justify-center text-3xl h-10 w-10 bg-gray-400 rounded-full m-2 cursor-pointer' ><AiOutlineArrowLeft/></div>
@@ -34,6 +45,10 @@ const WishDetails = ({wish}:{wish:IWish}) => {
                  <p>Description: {description}</p>
                  <h3>Price: {price}$</h3>
                 {link && <Link href={link} >Link for buying</Link>}
+                <div className="gap-2 flex align-middle justify-start " >
+                    <input type="checkbox" checked={currentStatus === "booked"} onChange={handleStatus} className="w-5 h-6 cursor-pointer" />
+                    <div>Status: {currentStatus}</div>
+                </div>
             <div className='flex justify-around m-2'>
                     <button onClick={update} className='w-40 h-12 bg-blue-400 rounded-xl cursor-pointer' >Update</button>
                 {isOpen && <Modal/>}

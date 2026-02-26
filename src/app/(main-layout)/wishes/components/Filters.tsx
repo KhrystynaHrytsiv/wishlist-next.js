@@ -27,8 +27,9 @@ import {useAppContext} from "@/app/Context";
                 </div>
                 <div className=' rounded bg-white p-1.5 gap-2 flex  justify-center items-center md:text-lg lg:text-lg'>
                     <label>Sort by Status:</label>
-                    <select value={status?? ''} onChange={(e)=>
+                    <select value={status ?? ''} onChange={(e) =>
                         setStatus(e.target.value === '' ? null : (e.target.value as 'free' | 'booked'))}>
+                        <option value=''>No status choose</option>
                         <option value={'free'}>Free</option>
                         <option value={'booked'}>Booked</option>
                     </select>

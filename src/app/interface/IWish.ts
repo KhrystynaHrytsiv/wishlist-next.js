@@ -5,6 +5,6 @@ export interface IWish {
     image:string,
     price:number,
     link:string,
-    status: 'free' | 'booked'
+    wishStatus: 'free' | 'booked'
     createdAt: string
 }

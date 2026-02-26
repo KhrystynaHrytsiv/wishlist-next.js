@@ -54,11 +54,7 @@ export default function ContextProvider ({children}:{children: ReactNode }){
             );
         }
         if (status) {
-            result.sort((a, b) =>
-                status === 'free'
-                    ? a.status === 'free' ? -1 : 1
-                    : a.status === 'booked' ? -1 : 1
-            );
+            result = result.filter(w => w.wishStatus === status);
         }
 
         return result;
