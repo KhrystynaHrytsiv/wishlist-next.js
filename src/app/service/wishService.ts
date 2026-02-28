@@ -2,7 +2,7 @@ import axios from "axios";
 import {IWish} from "@/app/interface/IWish";
 import {IRes} from "@/app/interface/IRes";
 
-const baseUrl = 'http://localhost:4000/'
+const baseUrl = 'https://wishlist-api-bjlo.onrender.com'
 
 const apiService = axios.create({baseURL:baseUrl});
 
