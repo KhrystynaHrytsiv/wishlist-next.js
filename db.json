@@ -106,6 +106,36 @@
       "title": " Tulips",
       "createdAt": "2026-02-26T14:46:41.150Z",
       "status": "free"
+    },
+    {
+      "id": "13",
+      "link": "https://www.foxtrot.com.ua/uk/shop/zubniye-shchetki-irrigatoriy-pecham-irigator-travel-white-pc-1581-4822119080614.html?utm_source=google&utm_medium=cpc&utm_campaign=0-%5Bvendor%5D-%5Bpmax%5D-%5BFOX%5D-ACC_schetki_PECHAM&utm_content=23299274849&gad_source=1&gad_campaignid=23294257380&gbraid=0AAAAADMQBcoCZfxzsRXHOlepb5RrSaXcf&gclid=CjwKCAiAqKbMBhBmEiwAZ3UboJ8Wlw6eG17dS9ZminEO9TP3npK7CMZpHB7jKzbHgHgCJKz1GNPKfxoCZMMQAvD_BwE",
+      "image": "https://files.foxtrot.com.ua/PhotoNew/img_0_86_1591_0_1_cvTiXf.webp",
+      "price": 43,
+      "description": "Іригатор PECHAM travel white PC-1581 (4822119080614)",
+      "title": "Irrugator",
+      "createdAt": "2026-02-26T15:50:22.984Z",
+      "wishStatus": "free"
+    },
+    {
+      "id": "14",
+      "link": "https://ksd.ua/product/onyx-storm-empireyi-knyha-3?utm_source=google&utm_medium=cpc&utm_campaign=Ukr-Perform_Max-All-%D0%9A%D0%A1%D0%94&utm_content=gid__x_c_9198696_&utm_term=__&gad_source=1&gad_campaignid=23362505971&gbraid=0AAAAADq3rguEK5e8fjCPw0e12n0xdztuX&gclid=CjwKCAiA-__MBhAKEiwASBmsBDbeuD-1L5Ik49CaQm3lB32cQsAM6yR9jroT1AP-wq7HRDGLoTSgFhoCWs0QAvD_BwE",
+      "image": "https://ksd.ua/storage/products/gallery/medium_x2/4ad7k7sYLwkeNcHjShQbgRmS1UvtmqtcCCdqsTAr.jpg.webp?v=1742222255",
+      "price": 20,
+      "description": "Оніксова буря. Емпіреї. Книга 3.",
+      "title": "book",
+      "createdAt": "2026-02-26T15:52:28.290Z",
+      "wishStatus": "free"
+    },
+    {
+      "id": "15",
+      "link": "https://ksd.ua/product/zalizne-polumya-empireyi-kniga-2",
+      "image": "https://knigoland.com.ua/_next/image?url=https%3A%2F%2Fadmin.knigoland.com.ua%2Fassets%2Feab40663-a3c8-4b2b-89c7-d6bf382a8650.webp&w=1920&q=75",
+      "price": 20,
+      "description": "Залізне полум’я. Емпіреї. Книга 2.(830грн)",
+      "title": "book",
+      "createdAt": "2026-02-26T16:02:59.193Z",
+      "wishStatus": "free"
     }
   ]
 }
